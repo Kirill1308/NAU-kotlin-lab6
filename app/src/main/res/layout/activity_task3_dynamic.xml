@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 3: RelativeLayout for dynamic manipulation via code -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Control Button at the top -->
+    <Button
+        android:id="@+id/moveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/move_button"
+        android:textSize="16sp" />
+
+    <!-- Initial TextView in center -->
+    <TextView
+        android:id="@+id/movableTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="I will move!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/purple_700"
+        android:padding="16dp" />
+
+    <!-- Reference buttons for positioning -->
+    <Button
+        android:id="@+id/topLeftRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moveButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:text="Top Left Ref"
+        android:backgroundTint="@color/light_blue" />
+
+    <Button
+        android:id="@+id/bottomRightRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Bottom Right Ref"
+        android:backgroundTint="@color/light_green" />
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topLeftRef"
+        android:layout_marginTop="16dp"
+        android:text="Click 'Move Component' to dynamically reposition the movable TextView"
+        android:textSize="14sp"
+        android:padding="12dp"
+        android:background="@color/light_gray" />
+
+</RelativeLayout>

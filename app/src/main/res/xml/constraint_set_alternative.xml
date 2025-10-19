@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Alternative ConstraintSet definition in XML -->
+<ConstraintSet xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Example of defining constraints in XML that can be loaded programmatically -->
+    <Constraint
+        android:id="@+id/chainElement1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createCircleButton"
+        android:layout_marginTop="32dp" />
+
+    <Constraint
+        android:id="@+id/chainElement2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/chainElement1"
+        app:layout_constraintTop_toTopOf="@id/chainElement1"
+        android:layout_marginStart="16dp" />
+
+    <Constraint
+        android:id="@+id/chainElement3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/chainElement2"
+        app:layout_constraintTop_toTopOf="@id/chainElement1"
+        android:layout_marginStart="16dp" />
+
+    <!-- Circle constraint example in XML -->
+    <Constraint
+        android:id="@+id/circleElement1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintCircle="@id/circleCenter"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="0" />
+
+    <Constraint
+        android:id="@+id/circleElement2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintCircle="@id/circleCenter"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="90" />
+
+    <Constraint
+        android:id="@+id/circleElement3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintCircle="@id/circleCenter"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="180" />
+
+    <Constraint
+        android:id="@+id/circleElement4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintCircle="@id/circleCenter"
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="270" />
+
+</ConstraintSet>

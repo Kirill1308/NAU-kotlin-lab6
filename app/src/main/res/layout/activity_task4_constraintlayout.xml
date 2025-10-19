@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 4: ConstraintLayout - demonstrates positioning and constraints -->
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Header aligned to top -->
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/header_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/light_blue"
+        android:padding="16dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button in top right corner -->
+    <Button
+        android:id="@+id/topRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Right"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintTop_toBottomOf="@id/headerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button in top left corner -->
+    <Button
+        android:id="@+id/topLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Left"
+        android:backgroundTint="@color/light_red"
+        app:layout_constraintTop_toBottomOf="@id/headerTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Center TextView -->
+    <TextView
+        android:id="@+id/centerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/center_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:padding="20dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button below center -->
+    <Button
+        android:id="@+id/belowCenterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Below Center"
+        android:backgroundTint="@color/light_yellow"
+        app:layout_constraintTop_toBottomOf="@id/centerTextView"
+        app:layout_constraintStart_toStartOf="@id/centerTextView"
+        app:layout_constraintEnd_toEndOf="@id/centerTextView"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button above center -->
+    <Button
+        android:id="@+id/aboveCenterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Above Center"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintBottom_toTopOf="@id/centerTextView"
+        app:layout_constraintStart_toStartOf="@id/centerTextView"
+        app:layout_constraintEnd_toEndOf="@id/centerTextView"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Left element constrained to center -->
+    <TextView
+        android:id="@+id/leftTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@color/light_blue"
+        app:layout_constraintEnd_toStartOf="@id/centerTextView"
+        app:layout_constraintTop_toTopOf="@id/centerTextView"
+        app:layout_constraintBottom_toBottomOf="@id/centerTextView"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Right element constrained to center -->
+    <TextView
+        android:id="@+id/rightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@color/light_green"
+        app:layout_constraintStart_toEndOf="@id/centerTextView"
+        app:layout_constraintTop_toTopOf="@id/centerTextView"
+        app:layout_constraintBottom_toBottomOf="@id/centerTextView"
+        android:layout_marginStart="16dp" />
+
+    <!-- Footer at bottom -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/light_gray"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/footerButton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button1"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/footerButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button2"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+    <!-- Guideline at 30% -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <!-- Element aligned to guideline -->
+    <Button
+        android:id="@+id/guidelineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="At 30%"
+        android:backgroundTint="@color/purple_500"
+        app:layout_constraintStart_toStartOf="@id/guideline30"
+        app:layout_constraintTop_toBottomOf="@id/topLeftButton"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
