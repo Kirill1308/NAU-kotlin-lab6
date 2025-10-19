@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 2: RelativeLayout with elements positioned relative to parent and each other -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Top Left - aligned to parent top and left -->
+    <Button
+        android:id="@+id/topLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:text="Top Left"
+        android:backgroundTint="@color/light_blue" />
+
+    <!-- Top Right - aligned to parent top and right -->
+    <Button
+        android:id="@+id/topRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Top Right"
+        android:backgroundTint="@color/light_green" />
+
+    <!-- Center - aligned to parent center -->
+    <TextView
+        android:id="@+id/centerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/center_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:padding="16dp"
+        android:background="@color/light_gray" />
+
+    <!-- Below Center - positioned below centerTextView -->
+    <Button
+        android:id="@+id/belowCenterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/centerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Below Center"
+        android:backgroundTint="@color/light_yellow" />
+
+    <!-- Above Center - positioned above centerTextView -->
+    <Button
+        android:id="@+id/aboveCenterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/centerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Above Center"
+        android:backgroundTint="@color/teal_200" />
+
+    <!-- Bottom Left - aligned to parent bottom and left -->
+    <Button
+        android:id="@+id/bottomLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Bottom Left"
+        android:backgroundTint="@color/light_red" />
+
+    <!-- Bottom Right - aligned to parent bottom and right -->
+    <Button
+        android:id="@+id/bottomRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Bottom Right"
+        android:backgroundTint="@color/purple_500" />
+
+    <!-- Left Center - aligned to parent left and vertically centered -->
+    <TextView
+        android:id="@+id/leftCenterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="Left"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@color/light_blue" />
+
+    <!-- Right Center - aligned to parent right and vertically centered -->
+    <TextView
+        android:id="@+id/rightCenterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="Right"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@color/light_green" />
+
+    <!-- Element aligned to the right of leftCenterTextView -->
+    <Button
+        android:id="@+id/toRightOfLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/leftCenterTextView"
+        android:layout_alignTop="@id/leftCenterTextView"
+        android:layout_marginStart="8dp"
+        android:text="→"
+        android:backgroundTint="@color/teal_700" />
+
+    <!-- Element aligned to the left of rightCenterTextView -->
+    <Button
+        android:id="@+id/toLeftOfRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/rightCenterTextView"
+        android:layout_alignTop="@id/rightCenterTextView"
+        android:layout_marginEnd="8dp"
+        android:text="←"
+        android:backgroundTint="@color/teal_700" />
+
+</RelativeLayout>

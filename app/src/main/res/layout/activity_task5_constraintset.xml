@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 5: Base layout for ConstraintSet manipulation -->
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Control buttons -->
+    <Button
+        android:id="@+id/createChainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Create Chain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/createBarrierButton"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/createBarrierButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Create Barrier"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/createChainButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="4dp" />
+
+    <Button
+        android:id="@+id/createCircleButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Circle Constraint"
+        app:layout_constraintTop_toBottomOf="@id/createChainButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/createGroupButton"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/createGroupButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Toggle Group"
+        app:layout_constraintTop_toBottomOf="@id/createBarrierButton"
+        app:layout_constraintStart_toEndOf="@id/createCircleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp" />
+
+    <!-- Elements for chain demonstration -->
+    <Button
+        android:id="@+id/chainElement1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C1"
+        android:backgroundTint="@color/light_blue"
+        app:layout_constraintTop_toBottomOf="@id/createCircleButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <Button
+        android:id="@+id/chainElement2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C2"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintTop_toTopOf="@id/chainElement1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/chainElement3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C3"
+        android:backgroundTint="@color/light_yellow"
+        app:layout_constraintTop_toTopOf="@id/chainElement1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Elements for barrier demonstration -->
+    <TextView
+        android:id="@+id/barrierElement1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Short"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="@color/light_red"
+        app:layout_constraintTop_toBottomOf="@id/chainElement1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/barrierElement2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Much Longer Text"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@id/barrierElement1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/barrierDependent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm after barrier"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:background="@color/teal_200"
+        app:layout_constraintTop_toTopOf="@id/barrierElement1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Center anchor for circle constraint -->
+    <View
+        android:id="@+id/circleCenter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/barrierElement2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp" />
+
+    <!-- Elements that will be positioned in a circle -->
+    <Button
+        android:id="@+id/circleElement1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="1"
+        android:textSize="12sp"
+        android:backgroundTint="@color/light_blue"
+        app:layout_constraintTop_toTopOf="@id/circleCenter"
+        app:layout_constraintStart_toStartOf="@id/circleCenter" />
+
+    <Button
+        android:id="@+id/circleElement2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="2"
+        android:textSize="12sp"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintTop_toTopOf="@id/circleCenter"
+        app:layout_constraintStart_toStartOf="@id/circleCenter" />
+
+    <Button
+        android:id="@+id/circleElement3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="3"
+        android:textSize="12sp"
+        android:backgroundTint="@color/light_yellow"
+        app:layout_constraintTop_toTopOf="@id/circleCenter"
+        app:layout_constraintStart_toStartOf="@id/circleCenter" />
+
+    <Button
+        android:id="@+id/circleElement4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="4"
+        android:textSize="12sp"
+        android:backgroundTint="@color/light_red"
+        app:layout_constraintTop_toTopOf="@id/circleCenter"
+        app:layout_constraintStart_toStartOf="@id/circleCenter" />
+
+    <!-- Group elements (will be shown/hidden together) -->
+    <TextView
+        android:id="@+id/groupElement1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group 1"
+        android:padding="8dp"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/groupElement2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group 2"
+        android:padding="8dp"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

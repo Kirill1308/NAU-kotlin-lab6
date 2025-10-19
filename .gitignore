@@ -32,3 +32,17 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Android ###
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+.gradle/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
